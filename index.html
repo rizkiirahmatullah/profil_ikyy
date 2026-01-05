@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rizki Rahmatullah S.Kom — Profil Profesional</title>
+<meta name="description" content="Profil profesional Rizki Rahmatullah S.Kom — Data Analyst — Programmer / Sistem Informasi.">
+<link rel="icon" href="#" />
+<style>
+  /* ---------- THEME & LAYOUT ---------- */
+  :root{
+    --bg-1:#041021;
+    --bg-2:#062033;
+    --card:#071726;
+    --muted:#9fb2c6;
+    --accent:#064e3b; /* emerald/gagah */
+    --accent-2:#075985;
+    --glass: rgba(255,255,255,0.03);
+    --glass-2: rgba(255,255,255,0.02);
+    --radius:14px;
+    --maxw:1100px;
+    --trans:0.38s;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(3,37,65,0.6), transparent),
+                linear-gradient(180deg,var(--bg-1),var(--bg-2));
+    color:#e6f0f6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+    padding:28px 16px;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto}
+
+  /* ---------- TOP HERO ---------- */
+  .hero{
+    display:grid;
+    grid-template-columns: 120px 1fr auto;
+    gap:20px;
+    align-items:center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:20px;
+    border-radius:var(--radius);
+    box-shadow: 0 10px 40px rgba(2,8,20,0.6);
+    backdrop-filter: blur(6px);
+    position:relative;
+    overflow:hidden;
+    transform:translateY(0);
+  }
+  /* subtle animated background shapes */
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-120px;top:-60px;
+    width:280px;height:280px;
+    background: radial-gradient(circle at 30% 30%, rgba(6,78,59,0.18), transparent 40%),
+                radial-gradient(circle at 70% 70%, rgba(7,89,133,0.08), transparent 30%);
+    filter: blur(40px);
+    transform: rotate(12deg);
+    pointer-events:none;
+  }
+
+  .avatar{
+    width:100px;height:100px;border-radius:16px;overflow:hidden;border:3px solid rgba(255,255,255,0.04);
+    box-shadow: 0 8px 30px rgba(2,8,20,0.6);
+    transition: transform var(--trans), box-shadow var(--trans);
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;object-position: top;display:block}
+  .avatar:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 18px 50px rgba(5,150,105,0.12)}
+
+  .hero .meta h1{margin:0;font-size:22px;letter-spacing:0.2px}
+  .hero .meta p{margin:6px 0 0;color:var(--muted);font-weight:600}
+  .badges{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .badge{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:6px 10px;border-radius:999px;color:#e6fff6;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(5,78,59,0.14)}
+
+  .hero .cta{display:flex;flex-direction:column;gap:8px;margin-left:auto}
+  .btn{
+    background:var(--accent);color:#e9fff7;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block;
+    transition:transform var(--trans), box-shadow var(--trans);
+  }
+  .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+  .btn:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(5,78,59,0.12)}
+
+  nav.topnav{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
+  nav.topnav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+  nav.topnav a:hover{color:#fff}
+
+  /* ---------- CONTENT GRID ---------- */
+  .grid{display:grid;grid-template-columns: 1fr 340px;gap:20px;margin-top:20px}
+  main.card, aside.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,8,20,0.5)}
+  main.card{min-height:360px}
+  h2.section-title{margin:0 0 12px;color:var(--accent);font-size:18px}
+
+  /* about */
+  .lead{color:#dff6f0;margin-bottom:8px}
+  .pill{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700;margin-right:8px}
+
+  /* skills */
+  .skills{display:grid;gap:10px}
+  .skill{display:flex;flex-direction:column;gap:6px}
+  .skill strong{font-size:13px;color:#eaf7f3}
+  .bar{height:12px;background:var(--glass);border-radius:999px;overflow:hidden}
+  .bar > span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),#7c3aed);width:0%;transition:width 1s ease}
+
+  /* projects */
+  .projects{display:grid;gap:12px}
+  .project{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);transition:transform .25s ease;cursor:pointer}
+  .project:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(2,8,20,0.45)}
+  .project .meta{color:var(--muted);font-size:13px;margin-top:8px}
+
+  /* timeline / experience */
+  .timeline{display:flex;flex-direction:column;gap:12px}
+  .timeline-item{display:flex;gap:12px;align-items:flex-start}
+  .timeline-item .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);margin-top:6px}
+  .timeline-item .body{color:#d6eef1}
+
+  /* testimonials */
+  .testimonials{display:grid;grid-template-columns:1fr;gap:10px}
+  .testimonial{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;color:#cfeceb}
+
+  /* aside (contact, socials) */
+  .aside-section{margin-bottom:12px}
+  .socials{display:flex;gap:8px;flex-wrap:wrap}
+  .socials a{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:var(--glass);color:var(--muted);text-decoration:none;font-weight:700}
+  .download-cv{display:block;text-align:center;padding:10px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001814;font-weight:800;text-decoration:none;margin-top:8px}
+
+  /* contact form */
+  form input,form textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-top:8px}
+  form button{margin-top:10px;padding:10px 12px;border-radius:10px;border:none;background:var(--accent);color:#e8fff7;font-weight:800;cursor:pointer}
+
+  /* footer */
+  footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+
+  /* responsive */
+  @media (max-width:980px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:96px 1fr;}.cta{margin-left:0;flex-direction:row}}
+  @media (max-width:520px){.hero{grid-template-columns:80px 1fr};.avatar{width:80px;height:80px}}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.show{opacity:1;transform:none}
+
+  /* small helper */
+  .muted{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="avatar" title="Foto Rizki Rahmatullah">
+        <img src="foto-rizki.jpg" alt="Foto Rizki Rahmatullah — Anak Sumatera">
+      </div>
+
+      <div class="meta">
+        <h1 id="name">Rizki Rahmatullah S.Kom</h1>
+        <p class="lead">Data Analyst • Lulusan S1 Sistem Informasi • Programmer & Problem Solver</p>
+
+        <div class="badges" aria-hidden="true">
+          <span class="badge">HTML • CSS • JS</span>
+          <span class="badge">Python • Streamlit</span>
+          <span class="badge">MySQL • Data Analyst</span>
+        </div>
+
+        <nav class="topnav" aria-label="navigasi profil">
+          <a href="#about">Tentang</a>
+          <a href="#skills">Keahlian</a>
+          <a href="#projects">Proyek</a>
+          <a href="#testi">Testimoni</a>
+          <a href="#contact">Kontak</a>
+        </nav>
+      </div>
+
+      <div class="cta" role="region" aria-label="tombol aksi">
+        <a class="btn" href="CV_Rizki_Rahmatullah_S.Kom.pdf" download>Download CV</a>
+        <a class="btn secondary" href="mailto:rahasiarizki2@gmail.com">Email Langsung:rahasiarizki2@gmail.com</a>
+      </div>
+    </header>
+
+    <!-- GRID -->
+    <div class="grid">
+
+      <!-- MAIN -->
+      <main class="card" id="mainContent">
+
+        <!-- ABOUT -->
+        <section id="about" class="reveal">
+          <h2 class="section-title">Tentang Saya</h2>
+          <p class="lead">Halo! Saya <strong>Rizki Rahmatullah S.Kom</strong>, Dari Sumatera. Saya menyukai Data Analyst dan Programmer, automasi dengan Python, dan menerjemahkan masalah kompleks menjadi solusi sederhana yang bisa dipakai sehari-hari.</p>
+          <p class="muted">Saya memiliki pengalaman mendukung operasional di lingkungan instansi pemerintahan (termasuk pengalaman di area Istana). Disiplin, cepat belajar, dan siap bekerja Profesional.</p>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="reveal" style="margin-top:18px">
+          <h2 class="section-title">Keahlian Utama</h2>
+          <div class="skills">
+            <div class="skill"><strong>HTML & CSS</strong><div class="bar"><span data-w="92"></span></div></div>
+            <div class="skill"><strong>JavaScript</strong><div class="bar"><span data-w="78"></span></div></div>
+            <div class="skill"><strong>Python & Streamlit</strong><div class="bar"><span data-w="75"></span></div></div>
+            <div class="skill"><strong>MySQL & Data Analyst & Deployment</strong><div class="bar"><span data-w="72"></span></div></div>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="reveal" style="margin-top:18px">
+          <h2 class="section-title">Proyek Unggulan</h2>
+          <div class="projects">
+            <div class="project" tabindex="0" role="button" aria-pressed="false" data-title="Sistem Absensi" data-desc="Aplikasi absensi berbasis web—integrasi Google Sheets & JWT (Streamlit)."><strong>Sistem Absensi</strong><div class="meta">Streamlit • Python • Google Sheets</div></div>
+
+            <a href="https://portofolio-ikyy-data-analyst.streamlit.app/" class="project" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+    <strong>AI Data Analyst: Ultimate Edition</strong>
+    <div class="meta">Python • Streamlit • API Gemini3</div>
+</a>
+
+            <div class="project" tabindex="0" role="button" aria-pressed="false" data-title="Inventaris Tanaman" data-desc="Sistem informasi inventaris tanaman untuk kampus Trisakti: CRUD & laporan."><strong>Inventaris Tanaman</strong><div class="meta">PHP/JS • MySQL</div></div>
+          </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section id="exp" class="reveal" style="margin-top:18px">
+          <h2 class="section-title">Pengalaman & Timeline</h2>
+          <div class="timeline">
+            <div class="timeline-item"><div class="dot" aria-hidden="true"></div><div class="body"><strong>2020 — 2024</strong><div class="muted">Bekerja mendukung operasional Istana Ke Presidenan Jakarta Pusat posisi pendukung</div></div></div>
+            <div class="timeline-item"><div class="dot" aria-hidden="true"></div><div class="body"><strong>2025 — 2025</strong><div class="muted">Magang kerja / proyek kampus  univeritas trisakti : Sistem Informasi inventaris</div></div></div>
+            <div class="timeline-item"><div class="dot" aria-hidden="true"></div><div class="body"><strong>2021 — 2024</strong><div class="muted">Mahasiswa Strata S1 dan Mulai belajar web & Python, membangun proyek kecil</div></div></div>
+          </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testi" class="reveal" style="margin-top:18px">
+          <h2 class="section-title">Testimoni</h2>
+          <div class="testimonials">
+            <div class="testimonial">"Bekerja dengan disiplin, cepat belajar, dan selalu menyelesaikan tugas tepat waktu." — Rekan Kerja</div>
+            <div class="testimonial">"Memiliki etos kerja yang kuat dan mampu beradaptasi di lingkungan profesional." — Supervisor</div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ASIDE -->
+      <aside class="card">
+
+        <div class="aside-section reveal">
+          <h3 style="margin:0 0 8px">Kontak Cepat</h3>
+          <p class="muted">Email: <a href="mailto:rahasiarizki2@gmail.com" style="color:var(--accent);text-decoration:none">rahasiarizki2@gmail.com</a></p>
+          <p class="muted">Lokasi: Indonesia</p>
+          <a class="download-cv" href="CV-RizkiRahmatullah.html" download>Download CV — Rizki Rahmatullah</a>
+        </div>
+
+        <div class="aside-section reveal">
+          <h3 style="margin:0 0 8px">Sosial</h3>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/rizki-rahmatullah-0a1240252/" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://github.com/rizkiirahmatullah" aria-label="GitHub">GitHub</a>
+            <a href="https://www.instagram.com/_ikyy_tzy/" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+
+        <div class="aside-section reveal" id="contact">
+  <h3 style="margin:0 0 8px">Kirim Pesan</h3>
+  <form action="https://formsubmit.co/rahasiarizki2@gmail.com" method="POST">
+    <!-- Anti spam -->
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Redirect ke thankyou.html setelah kirim -->
+    <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+
+    <input type="text" name="name" placeholder="Nama" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" rows="4" placeholder="Pesan..." required></textarea>
+    <button type="submit">Kirim</button>
+  </form>
+</div>
+
+      </aside>
+    </div>
+    <footer>
+      <div class="muted">© <span id="year"></span> by ikyy_ Rizki Rahmatullah created </div>
+    </footer>
+
+  </div>
+
+<script>
+  // ===== Year =====
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ===== Reveal on scroll =====
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target) }
+    });
+  }, {threshold: 0.12});
+  revealEls.forEach(el => io.observe(el));
+
+  // ===== animate skill bars when visible =====
+  const skillSpans = document.querySelectorAll('.bar > span');
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if(en.isIntersecting){
+        const s = en.target;
+        const w = s.getAttribute('data-w') || '70';
+        setTimeout(()=> s.style.width = w + '%', 120);
+        skillObserver.unobserve(s);
+      }
+    });
+  }, {threshold:0.25});
+  skillSpans.forEach(s => skillObserver.observe(s));
+
+  // ===== Project click — simple modal-like detail (native alert fallback) =====
+  document.querySelectorAll('.project').forEach(p => {
+    p.addEventListener('click', () => {
+      const title = p.dataset.title || p.querySelector('strong').innerText;
+      const desc = p.dataset.desc || 'Deskripsi proyek belum diisi.';
+      // simple modal: use confirm to view link or show details
+      if(window.confirm(title + "\\n\\n" + desc + "\\n\\nBuka detail proyek di tab baru?")){
+        // open placeholder (replace with real link)
+        window.open('#', '_blank');
+      }
+    });
+    p.addEventListener('keydown', (ev) => { if(ev.key === 'Enter') p.click(); });
+  });
+
+  // ===== Keyboard accessibility: focus visible =====
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Tab') document.body.classList.add('keyboard-nav');
+  });
+</script>
+</body>
+</html>
